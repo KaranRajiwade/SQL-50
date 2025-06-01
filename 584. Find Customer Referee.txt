@@ -1,0 +1,15 @@
+-- Select the 'name' column from the 'Customer' table
+SELECT
+    name
+FROM
+    Customer
+WHERE
+    -- We want to return customers who either:
+    -- 1. Do not have a referee (referee_id is NULL)
+    -- 2. Have a referee_id that is NOT equal to 2
+    referee_id IS NULL OR referee_id != 2;
+
+-- Important note:
+-- Using 'referee_id != 2' **alone** will NOT include NULL values,
+-- because comparisons with NULL return UNKNOWN in SQL.
+-- So we must explicitly check for 'IS NULL' to include those records.
