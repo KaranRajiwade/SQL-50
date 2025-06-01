@@ -1,0 +1,11 @@
+-- Select distinct author IDs who viewed their own articles
+SELECT DISTINCT
+    author_id AS id
+FROM
+    Views
+WHERE
+    -- We are looking for rows where the author_id is the same as viewer_id
+    -- This means the author has viewed their own article
+    author_id = viewer_id
+ORDER BY
+    id ASC;  -- Sort the result by id in ascending order
