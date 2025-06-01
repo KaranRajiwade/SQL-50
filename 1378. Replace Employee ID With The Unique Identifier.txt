@@ -1,0 +1,12 @@
+# Write your MySQL query statement below
+SELECT eu.unique_id ,		-- from EmployeeUNI
+e.name	 			-- from Employees
+FROM Employees e
+LEFT JOIN EmployeeUNI eu
+ON e.id = eu.id;		 -- join condition: match IDs
+
+/* here used left join because 
+we want all values from the employees table no matter whether they have got unique_id or not 
+lets consider employees table on the left hand side and employeesUNI on right 
+we want all name values so LEFT JOIN select all values from the left table 
+and it will only select values that match the given condition from the employeesUNI.*/
