@@ -1,0 +1,6 @@
+SELECT              #SELECT is used to select the column we want 
+ product_id         #product_id si the column which we have selected
+FROM                #FROM 'means from which table (insert the table name ,after this)'
+ Products           #the table name
+WHERE               #the condition where
+ low_fats ='Y' AND recyclable = 'Y'      #here and is used to to combine those two conditions, and display output accordingly
