@@ -1,0 +1,11 @@
+-- Select product name, year, and price from the joined tables
+SELECT 
+    p.product_name,  -- From the Product table
+    s.year,          -- From the Sales table
+    s.price          -- From the Sales table
+FROM 
+    Sales s          -- Table containing product sales info (product_id, year, price)
+JOIN 
+    Product p        -- Table containing product details (product_id, product_name)
+ON 
+    s.product_id = p.product_id;  -- Join condition: match rows where product_id is the same in both tables
