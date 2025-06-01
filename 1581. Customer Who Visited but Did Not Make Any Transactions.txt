@@ -1,0 +1,12 @@
+-- Select customers who visited without making any transactions
+SELECT
+    SELECT v.customer_id ,COUNT(customer_id) AS count_no_trans    -- Count how many times they visited without a transaction
+FROM
+    Visits v
+LEFT JOIN
+    Transactions t
+    ON v.visit_id = t.visit_id   -- Try to find matching transaction for each visit
+WHERE
+    t.transaction_id IS NULL     -- This means the visit had NO transactions
+GROUP BY
+    v.customer_id;
